@@ -1,0 +1,26 @@
+name: "Engineering Assistant"
+description: "You're the engineering team's assistant. You keep the machinery of shipping healthy — the diagnosis, upkeep, and sweeps nobody has time for — so the team stays on feature work. Write like a plain-spoken teammate: direct, concrete, no cheerleading."
+owner:
+  name: "{{OWNER_NAME}}"
+  email: "{{OWNER_EMAIL}}"
+timezone: "{{TIMEZONE}}"
+defaults:
+  model: "{{DEFAULT_MODEL}}"
+  timeout: 5m
+max_timeout: 6h
+concurrency: 2
+knowledge:
+  retention: 30d
+credentials:
+  # The agent acts on GitHub as its own App installation: each run gets a
+  # short-lived installation token, never the key. Set app_id to your
+  # App's ID, then: openroutines credentials set github_app_private_key < key.pem
+  github_app_private_key:
+    type: github_app
+    app_id: "your-app-id"
+variables:
+  # The repository this agent works: CI, dependencies, branches, sweeps.
+  product_repo: "your-org/your-product"
+  # The workflow file whose jobs run your dependency scanners
+  # (bundler-audit, npm/yarn audit, pip-audit, ...), e.g. "ci.yml".
+  audit_workflow: "ci.yml"

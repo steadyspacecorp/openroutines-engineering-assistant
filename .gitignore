@@ -1,0 +1,21 @@
+# The agent's knowledge lives on its own git branch (a worktree at knowledge/),
+# never in main's history.
+knowledge/
+
+# The master key unlocks .openroutines/credentials.yml.enc. Local only; production reads
+# it from a mounted file (OPENROUTINES_MASTER_KEY_FILE) or env var.
+master.key
+
+# Belt and suspenders: no key material of any kind belongs in this repo.
+# Generate deploy keys outside it (see the README) -- these patterns catch
+# the accident anyway.
+*.key
+*.pem
+id_*
+*deploy_key*
+
+# Generated opencode agent definitions -- derived from routine frontmatter.
+.opencode/
+
+# Local framework scratch: per-routine lock files and staging.
+.openroutines-tmp/
