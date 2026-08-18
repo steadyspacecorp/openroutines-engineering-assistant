@@ -1,3 +1,5 @@
+<img src="avatar.svg" alt="" width="96" align="right">
+
 An assistant for engineering teams, built on [OpenRoutines](https://openroutines.dev).
 It keeps the machinery of shipping healthy — the diagnosis, upkeep, and
 sweeps nobody has time for: CI failures arrive pre-diagnosed, dependency
@@ -57,7 +59,8 @@ and about ten minutes.
 2. `openroutines configure` — fills in the owner, timezone, and model,
    and generates the `master.key` that encrypts credentials (back it up;
    it stays out of git).
-3. Set the variables in `openroutines.yml`: your product repository and
+3. Set `repo` in `openroutines.yml` to your new repository's URL, then
+   set the variables: your product repository and
    the workflow that runs your dependency scanners — and the same values
    in the trigger URLs of `routines/ci-doctor.md` and
    `routines/audit-watch.md`.
