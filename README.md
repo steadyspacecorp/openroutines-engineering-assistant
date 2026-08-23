@@ -78,7 +78,7 @@ and about ten minutes.
    assignments: create an account for the agent, mint it a personal
    access token, then `openroutines credentials set steady_token`.
    Verify the wiring:
-   `OPENROUTINES_LOG_LEVEL=warn openroutines routines run steady-verify --no-knowledge`
+   `OPENROUTINES_LOG_LEVEL=warn openroutines routines run steady-verify`
 6. `openroutines check`, commit, and
    [deploy](https://openroutines.dev/docs/deploying/).
 
